@@ -36,33 +36,33 @@ function Footer() {
                     <p className="mb-1">
                         {/* Putem la click sa intram direct in aplicatia de mail, specificand adresa de mail catre
                         care scriem, dupa "mailto:". */}
-                        <a href="mailto:razvan.cirlugea@gmail.com">
+                        <a href="mailto:proiect@react.com">
                             <Mail className="mr-1 mb-1 footer-icon"/>
-                            razvan.cirlugea@gmail.com
+                            proiect@react.com
                         </a>
                     </p>
-                    <p className="m-0"><Phone className="mr-1 footer-icon"/>+40728998166</p>
+                    <p className="m-0"><Phone className="mr-1 footer-icon"/>+40123456</p>
                 </div>
                 {/* Coloana 3: link-uri externe. */}
                 <div>
                     <h3 className="h5">Contactează-mă:</h3>
                     <p className="mb-1">
-                        <a href="https://github.com/razvancir96">
+                        <a href="https://www.google.com">
                             <GitHub className="mr-1 mb-1 footer-icon"/>
-                            razvancir96
+                            proiectReact
                         </a>
                     </p>
                     <p className="m-0">
-                        <a href="https://www.linkedin.com/in/razvancirlugea/">
+                        <a href="https://www.google.com">
                             <LinkedIn className="mr-1 footer-icon"/>
-                            razvancirlugea
+                            proiectReact
                         </a>
                     </p>
                 </div>
             </div>
             {/* Pentru cel de-al doilea rand din footer, nu trebuie decat sa centram textul. */}
             <div className="text-center py-3">
-                &copy; Răzvan Cîrlugea, 2019
+                &copy; ProiectReact, 2023
             </div>
         </footer>
     );
