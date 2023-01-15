@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout';
-import products from '../utils/products.json';
+import products from '../utils/products.json'
 import ProductList from '../components/ProductList';
 
 class Category extends Component {
@@ -8,18 +8,16 @@ class Category extends Component {
         super(props);
         this.state = {
             category: {},
-            // Avem nevoie de itemii categoriei.
-            items: []
+            items: [],
         }
     }
 
     componentDidMount() {
         const { match } = this.props;
         const categoryName = match.params.categoryName;
-        // Actualizam atat informatiile despre categorie, cat si despre produse.
         this.setState({
             category: products[categoryName],
-            items: products[categoryName].items
+            items: products[categoryName].items,
         });
     }
 
@@ -27,8 +25,7 @@ class Category extends Component {
         return (
             <Layout>
                 <div className="container-fluid container-min-max-width">
-                    <h2 className="mb-5">{ this.state.category.name }</h2>
-                    {/* Pasam itemii mai departe catre ProductList */}
+                    <h2>{ this.state.category.name }</h2>
                     <ProductList products={this.state.items} />
                 </div>
             </Layout>

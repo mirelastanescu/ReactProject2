@@ -1,44 +1,44 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logo from '../assets/images/logo.png';
 import { ReactComponent as ShoppingCart } from '../assets/icons/shopping-cart.svg';
 import './Header.css';
+// In header dorim sa afisam numarul de produse din cart. Asadar, trebuie sa ne conectam
+// la store-ul global pentru a-l extrage
+import { connect } from 'react-redux';
 
 function Header(props) {
-    // Headerul primeste acum informatiile despre user si functia de signOut de la Firebase.
-    // ATENTIE! Aceste prop-uri au fost pasate din App in Home in Layout in Header, ceea ce e ORIBIL.
-    // Se numeste prop drilling tehnica asta si nu ne dorim asa ceva. Cum vom scapa de ea?
-    // La cursul urmatopr, Redux ne salveaza!
-    const {user, signOut} = props;
+    // numberOfProducts este un injectat de functia mapStateToProps!
+    const {user, signOut, numberOfProducts } = props;
 
-    // La click-ul pe butonul de delogare din header se va executa metoda signOut, venita din Firebase,
-    // pasata prin props-uri tocmai din App.js.
-    function handleSignOut() {
+    function handleHeaderSignOut() {
         signOut();
     }
 
     return(
         <header className="border-bottom mb-3">
-            <div className="container-fluid container-min-max-width
-                            d-flex justify-content-between align-items-center">
+            <div className="container-fluid container-min-max-width d-flex justify-content-between align-items-center">
                 <Link to="/" className="my-3">
                     <img src={Logo} alt="Sirluggia Shop" className="logo"/>
                 </Link>
                 <div>
-                    {/* ATENTIE! Daca avem informatii despre user, atunci ii vom afisa un mesaj.
-                    Daca userul nu este logat, se va primi null ca valoare, deci nu com afisa nimic.*/}
-                    { user
+                    { user && user.uid
                         ? <p>Salut, {user.displayName}!</p>
                         : null
                     }
                     <div className="d-flex justify-content-end">
-                        {/* Daca avem user, afisam textul "delogare", altfel altfel afisam "logare" */}
-                        { user
-                            // La click pe buton se va apela metoda handleSignOut.
-                            ? <p className="logout h5" onClick={handleSignOut}>Delogare</p>
-                            : <Link to="/login" className="h5">Logare</Link>
+                        { user && user.uid
+                            ? <p className="logout h5" onClick={() => handleHeaderSignOut()}>Delogare</p>
+                            : <Link to="/login" className="h5 mb-0">Logare</Link>
                         }
-                        <ShoppingCart className="ml-2"/>
+                        <div className="d-flex align-items-center">
+                            {/* Adaugam link catre pagina cart-ului */}
+                            <Link to="/cart" className="d-flex">
+                                <ShoppingCart className="ml-2"/>
+                                {/* numberOfProducts e venit din store si salvat in props prin functia mapStateToProps!! */}
+                                <p className="ml-1 mb-0">{ numberOfProducts }</p>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -46,4 +46,20 @@ function Header(props) {
     );
 }
 
-export default Header;
+// Functia mapStateToProps ia parti din state-ul store-ului si le aduce ca PROPS-uri in componenta curenta.
+// Cand este apelata de connect functia primeste automat state-ul store-ului. Pentru a primi in props campuri din
+// state, functia trebuie sa returneze un obiect, ale carui chei vor reprezenta NUMELE noilolor props-uri ce vor fi
+// injectate in componenta curenta(Header), care vor avea ca valori diverse campuri din state-ul din store.
+function mapStateToProps(state) {
+    return {
+        numberOfProducts: state.products.length
+    }
+}
+
+// Cart-ul trebuie sa fie conectat la store, deci vom folosi HOC-ul connect, care primeste automat
+// ca parametri mapStateToProps si mapDispatchToProps, pe care NOI trebuie sa le implementam.
+// In cazul de fata, nu avem nevoie sa trimitem actiuni catre store, deci nu avem nevoie de metoda mapDispatchToProps,
+// asadar putem sa pasam null in loc de vreo implementare.
+// ATENTIE! Trebuie ca cele doua metode sa fie pasate lui connect IN ORDINEA CORESPUNZATOARE(1. state; 2. dispatch),
+// dar pot fi denumire diferit, cu conditia ca si numele metodei de mai sus(cand ii e scrisa implementarea) sa fie acelasi.
+export default connect(mapStateToProps, null)(Header);
