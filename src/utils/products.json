@@ -95,7 +95,7 @@
         ],
         "image": "https://i.imgur.com/SZU7liE.jpg",
         "name": "Pulovere",
-        "description": "Pulovărașe elegănțele, slim, clasă superioară."
+        "description": "Pulovere din lana"
     },
     "pants": {
         "items": [
@@ -126,7 +126,7 @@
         ],
         "image": "https://i.imgur.com/srQCDRN.jpg",
         "name": "Pantaloni/blugi",
-        "description": "Jeanși și pantaloni pentru baieții care și-o ard patroni!"
+        "description": "Pantaloni casual"
     },
     "jackets": {
         "items": [
@@ -157,7 +157,7 @@
         ],
         "image": "https://i.imgur.com/81I6Oab.jpg",
         "name": "Geci/Haine",
-        "description": "Confortabile, călduroase și nu arăți ca un cartof!"
+        "description": "Haine originale!"
     },
     "tshirts": {
         "items": [
@@ -200,7 +200,7 @@
         ],
         "image": "https://i.imgur.com/l27WtFL.jpg",
         "name": "Tricouri",
-        "description": "Și de băiețeală și de sport."
+        "description": "Tricouri sport."
     },
     "accesories": {
         "items": [
@@ -231,6 +231,6 @@
         ],
         "image": "https://i.imgur.com/qw3wDj8.jpg",
         "name": "Accesorii",
-        "description": "Fulare, căciuli, mănuși: nu mai sta pe gânduri, cumpără-le acuși!"
+        "description": "Fulare, căciuli, mănuși"
     }
 }

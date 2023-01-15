@@ -10,6 +10,7 @@ import Cart from './pages/Cart';
 import './utils/utility-classes.css';
 // Importam si pagina de produs.
 import Product from './pages/Product';
+import Terms from './pages/Terms';
 
 function App() {
   return(
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/" component={Home}/>
         <Route path="/cart" component={Cart}/>
         <Route path="/about" component={About}/>
+        <Route path="/terms-and-conditions" component={Terms}/>
         <Route path="/category/:categoryName" component={Category}/>
         {/* Instantiem ruta pentru pagina de produs */}
         <Route path="/product/:productId" component={Product}/>
