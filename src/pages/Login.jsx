@@ -31,6 +31,14 @@ class Login extends React.Component {
                     <Google className="w-50 mr-3"/>
                     <span className="text-nowrap">Loghează-te cu Google</span>
                 </button>
+                <br></br>
+                <button
+                    className="btn btn-outline-dark d-flex align-items-center"
+                    onClick={() => this.props.signInWithFacebook()}
+                >
+                    <Google className="w-50 mr-3"/>
+                    <span className="text-nowrap">Loghează-te cu Facebook</span>
+                </button>
             </div>
         );
     }
