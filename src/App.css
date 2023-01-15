@@ -1,22 +1,12 @@
-.App {
-  text-align: center;
+/* Vrem ca toate link-urile din aplicatie sa aiba culoarea neagra. */
+/* A trebui sa pun si body in selector pentru a avea prioritate mai mare
+si a bate stilizarea default a link-urilor */
+body a {
+    color: black;
 }
 
-.App-logo {
-  height: 40vmin;
+/* Nu vrem la hover sa se schimbe culoarea */
+body a:hover {
+    color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
