@@ -4,10 +4,16 @@ import Footer from '../components/Footer';
 import './Layout.css';
 
 function Layout(props) {
+    // Preluam props-urile de interes.
+    const {user, signOut} = props;
+
     return(
-        // Stilizarea layout-ului se face din fisierul Layout.css
         <div className="layout">
-            <Header/>
+            {/* Pasam props-urile mai departa catre header. */}
+            <Header
+                user={user}
+                signOut={signOut}
+            />
                 { props.children }
             <Footer/>
         </div>
