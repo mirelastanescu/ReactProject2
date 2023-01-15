@@ -17,14 +17,14 @@ class Category extends Component {
         const categoryName = match.params.categoryName;
         this.setState({
             category: products[categoryName],
-            items: products[categoryName].items
+            items: products[categoryName].items,
         });
     }
 
     render() {
         return (
             <Layout>
-                <div className="container-fluid container-min-max-width">
+                <div className="content-min-height container-fluid container-min-max-width">
                     <h2>{ this.state.category.name }</h2>
                     <ProductList products={this.state.items} />
                 </div>
