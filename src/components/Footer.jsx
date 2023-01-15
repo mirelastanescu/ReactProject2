@@ -9,20 +9,15 @@ import './Footer.css';
 function Footer() {
     return(
         <footer className="pt-3 bg-light">
-            <div className="container-fluid container-min-max-width
-                            d-flex justify-content-between">
-                <div>
+            <div className="container-fluid container-min-max-width d-flex justify-content-between">
+                <div className="d-flex flex-column">
                     <h3 className="h5">Link-uri rapide:</h3>
-                    <p className="mb-1">
-                        <Link to='/about'>Despre</Link>
-                    </p>
-                    <p className="m-0">
-                        <Link to='/terms-and-conditions'>Termeni și condiții</Link>
-                    </p>
+                    <Link to='/about'>Despre</Link>
+                    <Link to='/terms-and-conditions'>Termeni și condiții</Link>
                 </div>
                 <div>
                     <h3 className="h5">Contactează-mă:</h3>
-                    <p className="mb-1">
+                    <p className="m-0">
                         <a href="mailto:razvan.cirlugea@gmail.com">
                             <Mail className="mr-1 mb-1 footer-icon"/>
                             razvan.cirlugea@gmail.com
@@ -32,7 +27,7 @@ function Footer() {
                 </div>
                 <div>
                     <h3 className="h5">Contactează-mă:</h3>
-                    <p className="mb-1">
+                    <p className="m-0">
                         <a href="https://github.com/razvancir96">
                             <GitHub className="mr-1 mb-1 footer-icon"/>
                             razvancir96

@@ -8,7 +8,7 @@ class Category extends Component {
         super(props);
         this.state = {
             category: {},
-            items: [],
+            items: []
         }
     }
 
@@ -17,7 +17,7 @@ class Category extends Component {
         const categoryName = match.params.categoryName;
         this.setState({
             category: products[categoryName],
-            items: products[categoryName].items,
+            items: products[categoryName].items
         });
     }
 

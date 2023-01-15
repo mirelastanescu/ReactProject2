@@ -1,62 +1,34 @@
 import React from 'react';
 import './App.css';
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Login from './pages/Login';
 import Page404 from './pages/Page404';
 import Category from './pages/Category';
-// Importam cart-ul.
 import Cart from './pages/Cart';
 import './utils/utility-classes.css';
-import withFirebaseAuth from 'react-with-firebase-auth'
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import firebaseConfig from './configs/firebase';
+// ATENTIE! Am eliminat importurile si initializarea firebase si App.js! Tot ce avem nevoie se fla in folderul
+// apis/firebase
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const firebaseAppAuth = firebaseApp.auth();
-const providers = {
-  googleProvider: new firebase.auth.GoogleAuthProvider(),
-};
-
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {}
-  }
-
-  render() {
-    return(
-      <div className="app">
-        <Switch>
-          <Route
-            path='/login'
-            render={(props) => <Login
-              {...props}
-              signInWithGoogle={this.props.signInWithGoogle}
-            />}
-          />
-          <Route
-            exact path='/'
-            render={(props) => <Home
-              {...props}
-              user={this.props.user}
-              signOut={this.props.signOut}
-            />}
-          />
-          {/* Adaugam ruta pentru cart */}
-          <Route path="/cart" component={Cart}/>
-          <Route path='/about' component={About}/>
-          <Route path='/category/:categoryName' component={Category}/>
-          <Route path='*' component={Page404}/>
-        </Switch>
-      </div>
-    )
-  }
+// WOW! App a devenit o functie! Cum? Am mutat toata informatia legata de user in store!
+function App() {
+  return(
+    <div className="app">
+      <Switch>
+        <Route path='/login' component={Login}/>
+        {/* De asemenea, rutelor nu mai strebuie sa le fie pasate parametri, deoarece componentele/paginile care
+        vor sa interactioneze cu informatia legata de user trebuie doar sa se conecteze la store! Verificati
+        componenta Header si pagina Login!*/}
+        <Route exact path='/' component={Home}/>
+        <Route path="/cart" component={Cart}/>
+        <Route path='/about' component={About}/>
+        <Route path='/category/:categoryName' component={Category}/>
+        <Route path='*' component={Page404}/>
+      </Switch>
+    </div>
+  );
 }
 
-export default withFirebaseAuth({
-  providers,
-  firebaseAppAuth,
-})(App);
+// App nu mai trebuie wrappuita de un HOC.
+export default App;
