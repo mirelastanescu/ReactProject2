@@ -1,17 +1,17 @@
 import React from 'react';
 import './ProductItem.css';
 import { connect } from 'react-redux';
-import { addToCart } from '../../redux/actions/cart';
-import { addToFavorite } from '../../redux/actions/favorite';
-import { removeFromFavorite } from '../../redux/actions/favorite';
+import { addToCart } from '../../redux/cart/cartAction';
+import { addToFavorite } from '../../redux/favorite/favoriteAction';
+import { removeFromFavorite } from '../../redux/favorite/favoriteAction';
 import { Link } from 'react-router-dom';
 import FavoriteEmpty from '../../assets/icons/emptyheart.svg';
 import FavoriteFull from '../../assets/icons/fullheart.svg';
 
 class ProductItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     isProductInList(id){
         return this.props.productsFav.find((p) => p.id === id);
