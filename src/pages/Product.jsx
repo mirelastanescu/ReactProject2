@@ -7,6 +7,7 @@ import './Product.css';
 import { connect } from 'react-redux';
 import { addToCart } from '../redux/actions/cart';
 import { addToFavorite } from '../redux/actions/favorite';
+import { removeFromFavorite } from '../redux/actions/favorite';
 import FavoriteEmpty from '../assets/icons/emptyheart.svg';
 import FavoriteFull from '../assets/icons/fullheart.svg';
 
@@ -51,6 +52,11 @@ class Product extends React.Component {
         this.setState({product: currentProduct});
     }
 
+    isProductInList(product){
+        console.log("this.props.productsFav", this.props.productsFav)
+        return this.props.productsFav.find((p) => p.id === product.id);
+    }
+
     render() {
         const { product } = this.state;
 
@@ -87,7 +93,8 @@ class Product extends React.Component {
                             <button
                                 className="btn mb-4"
                                 onClick={() => {
-                                    this.props.addToFavorite({
+                                    !this.isProductInList(product)
+                                    ? this.props.addToFavorite({
                                         product: {
                                             id: product.id,
                                             name: product.name,
@@ -96,10 +103,11 @@ class Product extends React.Component {
                                             image: product.image
                                         }
                                     })
+                                    : this.props.removeFromFavorite({id: product.id})
                                 }}
-                                border="0"                
                             >
-                            <img src={FavoriteEmpty} alt="Favorite" border="0"/>
+                            
+                            <img src={this.isProductInList(product)?FavoriteFull:FavoriteEmpty} alt="Favorite"/>
                             </button>
                             <p><span className="font-weight-bold">Mărime</span>: {product.size}</p>
                             <p><span className="font-weight-bold">Culoare</span>: {product.colour}</p>
@@ -119,8 +127,15 @@ class Product extends React.Component {
 function mapDispatchToProps(dispatch) {
     return {
         addToCart: (payload) => dispatch(addToCart(payload)),
-        addToFavorite: (payload) => dispatch(addToFavorite(payload))
+        addToFavorite: (payload) => dispatch(addToFavorite(payload)),
+        removeFromFavorite: (payload) => dispatch(removeFromFavorite(payload))
     }
 }
 
-export default connect(null, mapDispatchToProps)(Product);
+function mapStateToProps(state) {
+    return {
+        productsFav: state.favorite.products
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product);
