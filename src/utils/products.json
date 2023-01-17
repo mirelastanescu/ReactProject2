@@ -36,16 +36,28 @@
                 "material": "Piele",
                 "brand": "Massimo Dutti",
                 "description": "Ghete maro din piele, din colecția de toamnă-iarnă 2017, Massimo Dutti."
+            },
+            {
+                "id": 4,
+                "name": "Ghete copii",
+                "price": 200,
+                "currency": "LEI",
+                "image": "https://i.imgur.com/VkgKZ1o.jpg",
+                "size": 30,
+                "colour": "Maro",
+                "material": "Piele",
+                "brand": "Massimo Dutti",
+                "description": "Ghete zapada copii"
             }
         ],
-        "image": "https://i.imgur.com/X0qldXO.jpg",
+        "image": "https://i.imgur.com/k6cEXhF.jpeg",
         "name": "Încălțăminte",
         "description": "Ghete, pantofi, sneakerși"
     },
     "sweaters": {
         "items": [
             {
-                "id": 4,
+                "id": 5,
                 "name": "Pulovăr finuț cu guler",
                 "price": 95,
                 "currency": "LEI",
@@ -57,7 +69,7 @@
                 "description": "Pulovăr din cașmir, slim fit, colecția toamnă-iarnă 2019, DS Damat."
             },
             {
-                "id": 5,
+                "id": 6,
                 "name": "Pulovăr multicolor",
                 "price": 105,
                 "currency": "LEI",
@@ -69,7 +81,7 @@
                 "description": "Pulovăr multicolor, colecția toamnă-iarnă 209, McNeal."
             },
             {
-                "id": 6,
+                "id": 7,
                 "name": "Pulovăr călduros și frumos",
                 "price": 165,
                 "currency": "LEI",
@@ -81,7 +93,7 @@
                 "description": "Pulovăr din lână, în carouri, colecția toamnă-iarnă 2019, SELECTED."
             },
             {
-                "id": 7,
+                "id": 8,
                 "name": "Pulovăr din lână",
                 "price": 160,
                 "currency": "LEI",
@@ -91,16 +103,28 @@
                 "material": "Lână",
                 "brand": "Massimo Dutti",
                 "description": "Pulovăr din lână cu model, colecția toamnă-iarnă 2019, Massimo Dutti."
+            },
+            {
+                "id": 9,
+                "name": "Pulovăr copii",
+                "price": 200,
+                "currency": "LEI",
+                "image": "https://i.imgur.com/75SpFN6.jpeg",
+                "size": "L",
+                "colour": "Crem",
+                "material": "Lână",
+                "brand": "Massimo Dutti",
+                "description": "Pulovăr din lână pentru copii"
             }
         ],
-        "image": "https://i.imgur.com/SZU7liE.jpg",
+        "image": "https://i.imgur.com/XeWoSc5.jpg", 
         "name": "Pulovere",
         "description": "Pulovere lana"
     },
     "pants": {
         "items": [
             {
-                "id": 8,
+                "id": 10,
                 "name": "Blugi bleumarin slim fit",
                 "price": 35,
                 "currency": "LEI",
@@ -112,7 +136,7 @@
                 "description": "Blugi bleumarin, slim fit, colecția primăvară-vară 2019, DS Damat."
             },
             {
-                "id": 9,
+                "id": 11,
                 "name": "Blugi negri slim fit",
                 "price": 40,
                 "currency": "LEI",
@@ -131,7 +155,7 @@
     "jackets": {
         "items": [
             {
-                "id": 10,
+                "id": 12,
                 "name": "Haină lungă din lână virgină",
                 "price": 210,
                 "currency": "LEI",
@@ -143,7 +167,7 @@
                 "description": "Haină lungă din lână virgină, colecția toamnă-iarnă 2018, Peek and Cloppenburg."
             },
             {
-                "id": 11,
+                "id": 13,
                 "name": "Geacă bleumarin cu glugă detașabilă",
                 "price": 250,
                 "currency": "LEI",
@@ -162,7 +186,7 @@
     "tshirts": {
         "items": [
             {
-                "id": 12,
+                "id": 14,
                 "name": "Tricou în dungi",
                 "price": 90,
                 "currency": "LEI",
@@ -174,7 +198,7 @@
                 "description": "Tricou în dungi, colecția primăvară-vară 2019, Lacoste."
             },
             {
-                "id": 13,
+                "id": 15,
                 "name": "Tricou de ping pong",
                 "price": 110,
                 "currency": "LEI",
@@ -186,7 +210,7 @@
                 "description": "Tricou de ping pong cu imprimeu cu dragon, purtat de jucatorii naționalei chinei în 2013."
             },
             {
-                "id": 14,
+                "id": 16,
                 "name": "Tricou original BVB cu autograf",
                 "price": 1909,
                 "currency": "LEI",
@@ -205,7 +229,7 @@
     "accesories": {
         "items": [
             {
-                "id": 15,
+                "id": 17,
                 "name": "Fular TJ cu două fețe",
                 "price": 85,
                 "currency": "LEI",
@@ -217,7 +241,7 @@
                 "description": "Fular cu imprimeu, din colecția toamnă-iarnă 2018, Trussardi Jeans."
             },
             {
-                "id": 16,
+                "id": 18,
                 "name": "Mănuși din piele",
                 "price": 60,
                 "currency": "LEI",
@@ -227,6 +251,18 @@
                 "material": "Piele",
                 "brand": "DS Damat",
                 "description": "Mănuși din piele, cu model, din colecția toamnă-iarnă 2018, DS Damat."
+            },
+            {
+                "id": 19,
+                "name": "Mănuși copii",
+                "price": 60,
+                "currency": "LEI",
+                "image": "https://i.imgur.com/QGxEfCc.jpeg",
+                "size": "L",
+                "colour": "Negru",
+                "material": "Polar",
+                "brand": "DS Damat",
+                "description": "Mănuși copii"
             }
         ],
         "image": "https://i.imgur.com/qw3wDj8.jpg",
