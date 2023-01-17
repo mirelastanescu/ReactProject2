@@ -9,7 +9,6 @@ import Category from './pages/Category';
 import Cart from './pages/Cart';
 import Favorite from './pages/Favorite';
 import './utils/utility-classes.css';
-// Importam si pagina de produs.
 import Product from './pages/Product';
 import Terms from './pages/Terms';
 
@@ -24,7 +23,6 @@ function App() {
         <Route path="/about" component={About}/>
         <Route path="/terms-and-conditions" component={Terms}/>
         <Route path="/category/:categoryName" component={Category}/>
-        {/* Instantiem ruta pentru pagina de produs */}
         <Route path="/product/:productId" component={Product}/>
         <Route path="*" component={Page404}/>
       </Switch>
