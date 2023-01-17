@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Page404 from './pages/Page404';
 import Category from './pages/Category';
 import Cart from './pages/Cart';
+import Favorite from './pages/Favorite';
 import './utils/utility-classes.css';
 // Importam si pagina de produs.
 import Product from './pages/Product';
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" component={Login}/>
         <Route exact path="/" component={Home}/>
         <Route path="/cart" component={Cart}/>
+        <Route path="/Favorite" component={Favorite}/>
         <Route path="/about" component={About}/>
         <Route path="/terms-and-conditions" component={Terms}/>
         <Route path="/category/:categoryName" component={Category}/>

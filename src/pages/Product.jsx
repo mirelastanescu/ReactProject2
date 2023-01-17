@@ -6,6 +6,9 @@ import './Product.css';
 // Trebuie sa ne conectam la store, pentru a dispatch-ui actiunea de addToCart.
 import { connect } from 'react-redux';
 import { addToCart } from '../redux/actions/cart';
+import { addToFavorite } from '../redux/actions/favorite';
+import FavoriteEmpty from '../assets/icons/emptyheart.svg';
+import FavoriteFull from '../assets/icons/fullheart.svg';
 
 class Product extends React.Component {
     constructor(props) {
@@ -79,6 +82,24 @@ class Product extends React.Component {
                                 }}
                             >
                                 Adaugă în coș
+                            </button>&nbsp;&nbsp;
+
+                            <button
+                                className="btn mb-4"
+                                onClick={() => {
+                                    this.props.addToFavorite({
+                                        product: {
+                                            id: product.id,
+                                            name: product.name,
+                                            price: product.price,
+                                            currency: product.currency,
+                                            image: product.image
+                                        }
+                                    })
+                                }}
+                                border="0"                
+                            >
+                            <img src={FavoriteEmpty} alt="Favorite" border="0"/>
                             </button>
                             <p><span className="font-weight-bold">Mărime</span>: {product.size}</p>
                             <p><span className="font-weight-bold">Culoare</span>: {product.colour}</p>
@@ -97,7 +118,8 @@ class Product extends React.Component {
 // Avem nevoie sa ne conectam la store si sa aducem in props dispatch-ul metodei addToCart.
 function mapDispatchToProps(dispatch) {
     return {
-        addToCart: (payload) => dispatch(addToCart(payload))
+        addToCart: (payload) => dispatch(addToCart(payload)),
+        addToFavorite: (payload) => dispatch(addToFavorite(payload))
     }
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/images/logo.png';
 import { ReactComponent as ShoppingCart } from '../assets/icons/shopping-cart.svg';
+import { ReactComponent as Favorite } from '../assets/icons/fullheart.svg';
 import './Header.css';
 import { connect } from 'react-redux';
 import { logoutUser } from '../redux/actions/user';
@@ -22,11 +23,15 @@ function Header(props) {
                         { props.user && props.user.uid
                             ? <p className="logout h5" onClick={() => props.signOut()}>Delogare</p>
                             : <Link to="/login" className="text-dark h5 mb-0">Logare</Link>
-                        }
+                        }&nbsp;&nbsp;&nbsp;&nbsp;
                         <div className="d-flex align-items-center">
                             <Link to="/cart" className="d-flex">
                                 <ShoppingCart className="ml-2"/>
                                 <p className="ml-1 mb-0 text-dark">{ props.numberOfProducts }</p>
+                            </Link>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <Link to="/favorite" className="d-flex">
+                                <Favorite className="ml-2"/>
+                                <p className="ml-1 mb-0 text-dark">{ props.numberOfProductsFav }</p>
                             </Link>
                         </div>
                     </div>
@@ -39,6 +44,7 @@ function Header(props) {
 function mapStateToProps(state) {
     return {
         numberOfProducts: state.cart.products.length,
+        numberOfProductsFav: state.favorite.products.length,
         user: state.user.data.user
     }
 }

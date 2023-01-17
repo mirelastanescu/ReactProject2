@@ -40,7 +40,7 @@
         ],
         "image": "https://i.imgur.com/X0qldXO.jpg",
         "name": "Încălțăminte",
-        "description": "Ghete, pantofi, sneakerși: finețe garantată!"
+        "description": "Ghete, pantofi, sneakerși"
     },
     "sweaters": {
         "items": [
@@ -95,7 +95,7 @@
         ],
         "image": "https://i.imgur.com/SZU7liE.jpg",
         "name": "Pulovere",
-        "description": "Pulovere din lana"
+        "description": "Pulovere lana"
     },
     "pants": {
         "items": [
@@ -157,7 +157,7 @@
         ],
         "image": "https://i.imgur.com/81I6Oab.jpg",
         "name": "Geci/Haine",
-        "description": "Haine originale!"
+        "description": "Geci/Haine de iarna"
     },
     "tshirts": {
         "items": [
@@ -200,7 +200,7 @@
         ],
         "image": "https://i.imgur.com/l27WtFL.jpg",
         "name": "Tricouri",
-        "description": "Tricouri sport."
+        "description": "Tricouri sport"
     },
     "accesories": {
         "items": [

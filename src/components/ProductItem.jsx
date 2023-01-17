@@ -2,8 +2,11 @@ import React from 'react';
 import './ProductItem.css';
 import { connect } from 'react-redux';
 import { addToCart } from '../redux/actions/cart';
+import { addToFavorite } from '../redux/actions/favorite';
 // Importam Link-ul din router.
 import { Link } from 'react-router-dom';
+import FavoriteEmpty from '../assets/icons/emptyheart.svg';
+import FavoriteFull from '../assets/icons/fullheart.svg';
 
 function ProductItem(props) {
     const {name, price, currency, image, id} = props;
@@ -31,13 +34,29 @@ function ProductItem(props) {
             >
                 Adaugă în coș
             </button>
+            &nbsp;
+            <button
+                className="btn mb-4"
+                onClick={() => props.addToFavorite({
+                    product: {
+                        id,
+                        name,
+                        price,
+                        currency,
+                        image
+                    }
+                })}
+            >
+            <img src={FavoriteEmpty} alt="Favorite" border="0"/>
+            </button>
         </div>
     );
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        addToCart: (product) => dispatch(addToCart(product))
+        addToCart: (product) => dispatch(addToCart(product)),
+        addToFavorite: (product) => dispatch(addToFavorite(product))
     };
 }
 
