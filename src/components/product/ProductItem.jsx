@@ -1,12 +1,12 @@
 import React from 'react';
 import './ProductItem.css';
 import { connect } from 'react-redux';
-import { addToCart } from '../redux/actions/cart';
-import { addToFavorite } from '../redux/actions/favorite';
-import { removeFromFavorite } from '../redux/actions/favorite';
+import { addToCart } from '../../redux/actions/cart';
+import { addToFavorite } from '../../redux/actions/favorite';
+import { removeFromFavorite } from '../../redux/actions/favorite';
 import { Link } from 'react-router-dom';
-import FavoriteEmpty from '../assets/icons/emptyheart.svg';
-import FavoriteFull from '../assets/icons/fullheart.svg';
+import FavoriteEmpty from '../../assets/icons/emptyheart.svg';
+import FavoriteFull from '../../assets/icons/fullheart.svg';
 
 class ProductItem extends React.Component {
     constructor(props) {

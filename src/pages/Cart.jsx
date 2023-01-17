@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
 import { connect } from 'react-redux';
 import { removeFromCart } from '../redux/actions/cart';
 import { Link } from 'react-router-dom';
